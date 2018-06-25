@@ -7,7 +7,7 @@ const PhotoGallery = props =>{
   if (props){
     //console.log(results.data); 
       pics = results.data.map(pic =>
-        <Pic data={pic} />
+        <Pic data={pic} key={pic.id}/>
    );
   }
   

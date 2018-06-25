@@ -6,21 +6,23 @@ import axios from 'axios';
 class Displayphotos extends Component{
   constructor(){
     super();
-    console.log('greetings from Displayphotos');
     this.state ={
-      pics : []
+      pics : [],
+      loading: true
     };
   }
   
   componentDidMount(){
-    console.log(this.props.term);
+    // console.log(this.props.term);
     axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&safe_search=1&tags=${this.props.term}&per_page=16&format=json&nojsoncallback=1`)
     
     .then (response => {
-      // const getPics = response.data;
-      console.log(response.data.photos.photo);
+      
+      // const getPics = response.data;;
+      // console.log(response.data.photos.photo);
        this.setState ({
-        pics: response.data.photos.photo
+        pics: response.data.photos.photo,
+        loading: false
        });             
 
     })
@@ -29,6 +31,23 @@ class Displayphotos extends Component{
     })
   }
   render() { 
+    
+    if (this.state.loading){
+      return(
+        <div className ="container">
+        <h2>Loading... </h2>
+        </div>
+      )
+    }
+
+    if(this.state.pics.length ===0){
+      return(
+      <div className ="container">
+      <h2>No Results Found </h2>
+      <p>That search did not return any results, please try again.</p>
+      </div>
+      )
+    }
     return (
       
       <div className="container"> 

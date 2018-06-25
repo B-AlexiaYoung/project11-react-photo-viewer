@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
-import {
-    BrowserRouter,
-    Route,
-    Switch
-  } from 'react-router-dom';
 import { withRouter } from "react-router-dom";
-import {fasearch } from '@fortawesome/free-solid-svg-icons';
 
 class Searchform extends Component {
     
@@ -24,7 +18,8 @@ class Searchform extends Component {
     <div>
         <form className="search-form" onSubmit={this.searchHandler.bind(this)}>
         <input type="search" name="search" placeholder="Search" required ref={(input) => this.search= input}/>
-        <button type="submit" className="search-button"></button>
+        <button type="submit"><i className="fa fa-search fa-2x" aria-hidden="true"></i>
+</button>
         </form>
     </div>
     )
@@ -33,3 +28,4 @@ class Searchform extends Component {
 export default withRouter(Searchform);
 
 
+ 
