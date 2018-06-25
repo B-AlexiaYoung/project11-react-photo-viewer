@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
 
 class Searchform extends Component {
-    
+ // handler for search   
     searchHandler = (e) =>{
         e.preventDefault ();
         let newsearch = '/search/' + this.search.value;
-        // let newsearch = this.search.value;
         console.log(this.props);
         
         this.props.history.push(newsearch);

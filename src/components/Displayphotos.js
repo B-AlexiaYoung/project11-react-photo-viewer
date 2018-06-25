@@ -11,7 +11,7 @@ class Displayphotos extends Component{
       loading: true
     };
   }
-  
+  // get Json and set state properties if returned data
   componentDidMount(){
     // console.log(this.props.term);
     axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&safe_search=1&tags=${this.props.term}&per_page=16&format=json&nojsoncallback=1`)
@@ -31,7 +31,7 @@ class Displayphotos extends Component{
     })
   }
   render() { 
-    
+    // check for loading message
     if (this.state.loading){
       return(
         <div className ="container">
@@ -39,7 +39,7 @@ class Displayphotos extends Component{
         </div>
       )
     }
-
+    // check for no match searches
     if(this.state.pics.length ===0){
       return(
       <div className ="container">
@@ -49,7 +49,7 @@ class Displayphotos extends Component{
       )
     }
     return (
-      
+      // display photos
       <div className="container"> 
        <h2>{this.props.term} </h2>
 

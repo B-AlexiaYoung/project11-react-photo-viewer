@@ -1,5 +1,7 @@
 import React from 'react';
 import Pic from './Pic';
+
+// photos to go into ul, assign pic state and props
 const PhotoGallery = props =>{
   const results = props;
   let pics;

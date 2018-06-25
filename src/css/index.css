@@ -1,7 +1,9 @@
 body {
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  color: #3f4850;
+  font-family: 'Roboto', sans-serif;
+
+  color: #fff;
+  background-color: #0B132B
 }
 h2 {
   font-size: 2em;
@@ -29,7 +31,7 @@ a {
   height: 50px;
   width : 50px; */
   border-radius: 0 0.35em 0.35em 0;
-  background-color: DodgerBlue; 
+  background-color: #2F4745; 
     border: none; 
     color: white; 
     padding: 12px 16px; 
@@ -53,7 +55,7 @@ input {
 }
 .main-nav a {
   display: block;
-  background: #438bbd;
+  background: #243B4A;
   border-radius: 3px;
   padding: 5px;
   color: #fff;
@@ -61,7 +63,7 @@ input {
 .main-nav .active,
 .main-nav a:hover,
 .search-form button:hover {
-  background-color: #275270;
+  background-color: #2F4745;
 }
 .photo-container ul {
   display: flex;
